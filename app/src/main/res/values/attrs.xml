@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DonutView">
+        <attr name="donutViewScoreIndicatorColor" format="color" />
+        <attr name="donutViewTextSize" format="dimension" />
+        <attr name="donutViewScoreSize" format="dimension" />
+        <attr name="donutViewTextColor" format="color" />
+        <attr name="donutViewMaxScore" format="float" />
+    </declare-styleable>
+</resources>
