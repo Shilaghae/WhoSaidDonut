@@ -18,7 +18,8 @@ open class DonutService @Inject constructor(apiService: NetworkService) {
     open fun getUserScore(): Single<Int> {
         return donutApi.getScore()
                 .filter { it.creditReportInfo != null }
-                .flatMapSingle { Single.just(it.creditReportInfo!!.score) }
+                .map { it.creditReportInfo!!.score }
+                .toSingle()
                 .subscribeOn(Schedulers.io())
     }
 
