@@ -11,6 +11,7 @@ import com.whosaiddonut.base.BaseUiTest
 import com.whosaiddonut.error.ErrorMatcher
 import com.whosaiddonut.util.AssertionUtil.Companion.withScore
 import org.hamcrest.Matchers.allOf
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -21,6 +22,11 @@ class HomeActivityTest : BaseUiTest() {
     var activityTestRule: ActivityTestRule<HomeActivity> = ActivityTestRule(HomeActivity::class.java,
             false,
             true)
+
+    @Before
+    fun init() {
+        homeViewModel.scoreLiveData.postValue(0)
+    }
 
     @Test
     fun testUserHasCreditScore_CreditScoreIsVisible() {
